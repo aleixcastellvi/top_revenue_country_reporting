@@ -1,10 +1,6 @@
 # Luigi Task to obtain global revenue statistics
 
-This application uses the Luigi framework to generate monthly CSV files containing a ranking of the top ten countries that have generated the highest revenue in a sales dataset. The **CalculateMonthlyStatistics** class in Luigi plays a pivotal role in this process.
-
-The CalculateMonthlyStatistics class is responsible for determining whether the output file corresponding to the requested month and year already exists in the destination directory. If the file has not been generated yet, the class initiates the process to obtain the ranking of the top ten countries with the highest revenue for that specific period. However, if the file already exists in the directory, the Luigi class does not run again to prevent duplicate generation of results.
-
-To initiate the Luigi class and generate statistics, specifying the month and year of interest is required. This customization allows users to obtain statistics for any desired period.
+This application uses the Luigi framework to create monthly CSV files that rank the top ten countries by revenue in a sales dataset. The CalculateMonthlyStatistics Luigi class manages this process. Users can specify the desired month and year to generate customized statistics.
 
 While this solution is effective for use in a local environment, it could be further improved to make the most of Luigi's capabilities. One proposed enhancement could be to enable the Luigi class to automatically determine the latest available dataset and check whether it has been processed previously. If it has not been processed, the class would initiate the necessary tasks to generate the final CSV file. This enhancement could be combined with an automated mechanism that runs the Luigi class automatically on the first day of each month when a new monthly dataset is loaded for analysis.
 
